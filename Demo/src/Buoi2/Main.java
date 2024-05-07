@@ -38,21 +38,11 @@ public class Main {
         //Bài 1.5 kiểm tra nguyên âm phụ âm
         System.out.print("Nhập kí tự: ");
         char z = scanner.next().charAt(0);
-        boolean kq = false;
-        switch (z) {
-            case 'a':
-            case 'e':
-            case 'i':
-            case 'o':
-            case 'u':
-            case 'A':
-            case 'E':
-            case 'I':
-            case 'O':
-            case 'U':
-                kq = true;
-        }
-        if (kq == true) {
+        boolean kq = switch (z) {
+            case 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' -> true;
+            default -> false;
+        };
+        if (kq) {
             System.out.println(z + " Là nguyên âm");
         } else {
             System.out.println(z + " Là phụ âm");
